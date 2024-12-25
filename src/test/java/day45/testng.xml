@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite  thread-count="5" name="Suite" parallel="tests">
+  
+  <test name="chrometest">
+   <parameter name="browser"  value="chrome"/>
+   <parameter name="url"  value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"/>
+    <classes>
+      <class name="day45.ParamTest"/>
+     </classes>
+  </test> <!-- Test -->
+  
+  <test name="edgetest">
+   <parameter name="browser"  value="edge"/>
+   <parameter name="url"  value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"/>
+     <classes>
+      <class name="day45.ParamTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  <test name="firefoxtest">
+   <parameter name="url"  value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"/>
+   <parameter name="browser"  value="firefox"/>
+    <classes>
+      <class name="day45.ParamTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+</suite> <!-- Suite -->
+
+<!-- We can also run classes parallely-->
+<!-- thread count is optional for test but mandatory for suite-->
+<!-- for 100 test case thread count 5 is info, if we increase more then performance will slow and occuoy lot of memory, unstablity issue-->
+<!-- Why we do parallel execution as rerduce amout of time to performe test case eg. tc1 take 2sec, tc2 take 2sec so we can run both parallel in 2sec-->
